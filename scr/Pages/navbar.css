@@ -1,0 +1,295 @@
+.header {
+  background-color: white;
+  border-radius: 0 0 20px 20px;
+  padding: 10px;
+  border: 3px solid #000;
+  position: relative;
+  z-index: 10;
+}
+
+.header-title {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: var(--header-height);
+  margin: 0.5rem 0.5rem 1rem;
+  z-index: 20;
+}
+
+.nav__logo {
+  color: red;
+  transition: color 0.4s;
+  font-size: var(--h2-font-size);
+  font-family: var(--second-font);
+  display: flex;
+  align-items: center;
+}
+
+.nav__logo img {
+  margin-right: 10px;
+}
+
+.nav__toggle {
+  color: #000;
+  font-size: 2.5rem;
+  cursor: pointer;
+  order: 2;
+}
+
+.nav__cta {
+  background-color: var(--first-color);
+  color: var(--title-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 0.75rem 1.5rem;
+}
+
+.nav__menu {
+  position: fixed;
+  top: 20px;
+  right: -100%;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+  backdrop-filter: blur(32px); /* Увеличение размытия фона */
+  width: 16%;
+  height: 45%;
+  padding: 6rem 3rem 0;
+  transition: right 0.4s;
+  border-radius: 20px;
+  border: 2px solid #000;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: bold;
+  font-style: italic;
+  z-index: 5;
+  animation: bg-scrolling-reverse 3s linear infinite;
+  padding-top: 10px;
+}
+.nav__menu h1{
+  font-size: 2em;
+    color: #000000;
+}
+.nav__close {
+  color: black;
+  position: absolute;
+  font-size: 1.5rem;
+  top: 1rem;
+  right: 1.5rem;
+  margin-right: 15px; /* Добавлено отступ справа */
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+}
+
+.nav__link {
+  color: #333;
+  font-weight: var(--font-semi-bold);
+  text-decoration: none;
+  transition: color 0.4s;
+}
+
+.nav__link:hover {
+  color: #007bff;
+}
+
+.show-menu {
+  right: 20px;
+}
+
+.hide-toggle {
+  display: none;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Exo:100);
+
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+.nav__signature {
+  color: #000;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.nav__button {
+  border: 2px solid black;
+  background-color: rgb(170, 168, 168);
+  padding: 10px 20px;
+  border-radius: 20px;
+  display: flex;
+  margin: 70px auto;
+  width: 100px;
+  height: 20px;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.nav__button:hover {
+  background-color: rgba(169, 169, 169, 0.459);
+}
+
+.nav__button a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav__button a:hover {
+  color: #007bff;
+}
+
+.nav__logo-img {
+  width: 140px;
+  height: 80px;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+  margin-left: auto; /* Изменено на margin-left: auto; для перемещения вправо */
+  margin-right: 20px; /* Изменено на 20px для выравнивания по правому краю */
+}
+
+.auth-buttons button {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.auth-buttons button:hover {
+  background-color: #000;
+  color: #fff;
+  border-color: #fff;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8); /* Увеличение прозрачности для увеличения размытия */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 300px;
+  color: #000;
+}
+
+.modal  {
+  margin-bottom: 20px;
+}
+
+.modal label {
+  margin-bottom: 5px;
+  align-self: flex-start;
+}
+
+.modal input {
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.modal button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+}
+
+.modal button:hover {
+  background-color: #444;
+}
+
+.error {
+  color: red;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f8e6e6; /* Цвет фона сообщения об ошибке */
+  margin-top: 10px; /* Отступ сверху для сообщений */
+}
+
+.message.success {
+  color: green;
+  background-color: #e6f4ea; /* Цвет фона сообщения об успехе */
+}
+
+.message.error {
+  color: red;
+  background-color: #f8e6e6; /* Цвет фона сообщения об ошибке */
+}
+
+.message svg {
+  font-size: 1.5rem;
+}
+
+input.error {
+  border: 1px solid red;
+}
+
+.modal .message {
+  margin-top: 0;
+}
+
+.modal .error {
+  margin-top: 0;
+}
+
+.modal .error-fields {
+  border-color: red;
+}
+
+.modal .error-fields input {
+  border-color: red;
+}
+
+/* Добавленные стили для отступа надписи "Связь транзит 2024" */
+.footer {
+  margin-top: 10px;
+}

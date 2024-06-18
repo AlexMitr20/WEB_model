@@ -1,0 +1,292 @@
+/* Основной контейнер */
+.outer-container {
+  padding: 20px;
+  background-color: #b9b9b9;
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* Информация о проекте */
+.project-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+
+/* Поле ввода названия проекта */
+.file-name-input {
+  display: block;
+  font-size: 18px;
+  padding: 10px;
+  min-width: 5%;
+  border-radius: 15px;
+  border: 1px solid #000000;
+  font-weight: bold;
+  outline: none;
+}
+
+/* Контейнер для работы с файлами */
+.workfile-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.top-row,
+.bottom-row {
+  display: flex;
+  width: 49.3%;
+}
+
+.requirements-container,
+.assessment-container{
+  width: calc(48% - 10px); 
+  margin-bottom: 20px; 
+}
+
+.requirements-container,
+.assessment-container{
+  height: 350px; 
+}
+
+
+.requirements-container,
+.assessment-container {
+  margin: 0;
+  border: 2px solid #000000;
+  color: #000000;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+/* Стили для контейнера параметров */
+.parameters-container {
+  width: 48%;
+  margin-left: 23px;
+  border: 2px solid #000000;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  min-height: 350px; /* Минимальная высота контейнера параметров */
+  max-height: none;
+  color:#000
+}
+
+/* Стили для контейнера критериев */
+.criteria-container {
+  width: 48%;
+  margin-left: 25px; /* Отступ слева только для блока "Критерии" */
+  border: 2px solid #000000;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  min-height: 350px; /* Минимальная высота контейнера критериев */
+  max-height: none;
+  color:#000
+}
+
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  flex-grow: 2;
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid #000000;
+}
+
+.clear-button {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 5px;
+  padding: 9px 20px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* Скрытие элемента */
+.hidden {
+  display: none;
+}
+
+/* Контейнер для чекбоксов */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Стилизация чекбокса */
+.styled-checkbox {
+  display: none;
+}
+
+/* Стилизация метки чекбокса */
+.styled-checkbox + label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Стилизация фоновой части чекбокса */
+.styled-checkbox + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: background-color 0.3s;
+}
+
+/* Стилизация фоновой части чекбокса при выборе */
+.styled-checkbox:checked + label:before {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+/* Стилизация галочки чекбокса */
+.styled-checkbox:checked + label:after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg); /* Поворот на 45 градусов */
+}
+
+/* Элементы параметра */
+.parameter-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Заголовок второго уровня */
+h2 {
+  margin: 0; /* Убираем отступы вокруг заголовка */
+  padding-bottom: 20px; /* Добавляем небольшой отступ снизу для заголовка */
+  font-size: 20px;
+  color: #000000;
+}
+
+/* Кнопка в виде квадрата */
+.square-button {
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  width: 40px; /* Фиксированная ширина */
+  height: 40px; /* Фиксированная высота */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Стилизация кнопки при наведении */
+.square-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* Убираем фокус с кнопки */
+.square-button:focus {
+  outline: none;
+}
+
+/* Скрытие стандартного значка кнопки */
+.square-button[title="Создать новый проект"] {
+  font-size: 0; /* Убираем старый крестик */
+}
+
+/* Добавление крестика на кнопку */
+.square-button[title="Создать новый проект"]::before {
+  content: "\2715"; /* Плюсик (крестик) */
+  display: inline-block;
+  transform: rotate(45deg); /* Поворот на 45 градусов */
+  font-size: 18px; /* Размер нового крестика */
+}
+
+/* Контейнер для кнопок */
+.buttons-container {
+  display: flex;
+  justify-content: flex-end; /* Смещаем кнопки вправо */
+  width: 100%; /* Занимаем всю ширину контейнера */
+}
+
+/* Управление отступом между кнопками */
+.buttons-container .square-button:not(:last-child) {
+  margin-right: 10px;
+  /* Сохраняем расстояние между кнопками */
+}
+
+/* Пояснительный текст при наведении на кнопку */
+.square-button::after {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  color: #000;
+  padding: 5px 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateX(15px); /* Сдвиг вправо на 15px */
+  white-space: nowrap;
+}
+
+/* Показываем пояснительный текст при наведении на кнопку */
+.square-button:hover::after {
+  display: block;
+}
+
+.criteria-list {
+  border: 2px solid #000;
+  padding: 15px;
+  border-radius: 20px;
+  margin-top: 15px;
+}
+
+.criteria-list h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+.criteria-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.criteria-list ul li {
+  margin-bottom: 5px;
+}
+
+.requirement-parameters{
+  border: 2px solid #000;
+  padding: 15px;
+  border-radius: 20px;
+  margin-top: 15px;
+}
